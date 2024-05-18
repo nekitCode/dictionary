@@ -15,25 +15,25 @@ export class MainComponent {
   public details: DetailsType[] = [
     {
       id: 1,
-      img: '',
+      img: '/assets/milling.png',
       title: 'Milling',
       link: '/milling',
     },
     {
       id: 2,
-      img: '',
+      img: '/assets/turning.png',
       title: 'Turning',
       link: '/turning',
     },
     {
       id: 3,
-      img: '',
-      title: 'Treading',
-      link: '/treading',
+      img: '/assets/threading.png',
+      title: 'Threading',
+      link: '/threading',
     },
     {
       id: 4,
-      img: '',
+      img: '/assets/holeMaking.png',
       title: 'Holemaking',
       link: '/holemaking',
     },

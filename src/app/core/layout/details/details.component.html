@@ -1,4 +1,8 @@
-<a [routerLink]="[detail.link]">
-	<img [src]="detail.img" [alt]="detail.img">
-	<p>{{detail.title}}</p>
+<a [routerLink]="[detail.link]" class="link-wrapper">
+	<div class="detail-wrapper">
+		<img class="detai-image" [src]="detail.img" [alt]="detail.img">
+	</div>
+	<p class="title-wrapper">
+		<span class="detail-title">{{detail.title}}</span>
+	</p>
 </a>
