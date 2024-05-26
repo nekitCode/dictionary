@@ -3,10 +3,16 @@
 	justify-content: center;
 	align-items: center;
 	width: 300px;
-    height: 200px;
+  height: 200px;
 	border-radius: 15px;
 	background: #ffff;
-    box-shadow: 7px 8px 20px 0px #cccbcb;
+  box-shadow: 7px 8px 20px 0px #cccbcb;
+}
+
+.detail-wrapper:hover {
+  transform: scale(1.01);
+  box-shadow: 10px 11px 23px 0px #cccbcb;
+  transition: transform .5s;
 }
 
 .detai-image {
@@ -34,3 +40,4 @@
 	background-color: rgb(179, 221, 207);
 	color: #222;
 }
+

@@ -1,0 +1,16 @@
+.wrapper-go-back {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 70px;
+  background-color: initial;
+  outline: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.img-arrow:active {
+  transform: translateX(5px);
+  transition: transform .5s;
+}
