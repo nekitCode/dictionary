@@ -1,1 +1,160 @@
-<div>milling</div>
+<div class="face-milling-wrapper">
+	<div class="face-milling-block">
+		<!-- <app-background> -->
+			<div class="">
+				<div class="material-block">Material</div>
+				<div class="calculator-wrapper">
+					<div class="input-block">
+						<p>Diameter</p>
+						<input class="input" formControlName="dc" type="number" [value]="calculationForm.value.dc">
+						<div class="parametr-block">
+							<p>Dc | mm</p>
+							<!-- условие если false ICON не показывает -->
+							<p *ngIf="true">ICON</p> 
+						</div>
+					</div>
+					<div class="input-block">
+						<p>Cutting speed</p>
+						<input class="input" formControlName="vc" type="number" [value]="calculationForm.value.vc">
+						<div class="parametr-block">
+							<p>vc | m/min</p>
+							<!-- условие если false ICON не показывает -->
+							<p *ngIf="true">ICON</p> 
+						</div>
+					</div>
+					<div class="input-block">
+						<p>Revolutions per minute, RPM</p>
+						<input class="input" formControlName="n" type="number" [value]="calculationForm.value.n">
+						<div class="parametr-block">
+							<p>n | RPM</p>
+							<p></p>
+						</div>
+					</div>
+					<div class="input-block">
+						<p>No. of teeth</p>
+						<input class="input" formControlName="z" type="number" [value]="calculationForm.value.z">
+						<div class="parametr-block">
+							<p>Z</p>
+							<p></p>
+						</div>
+					</div>
+					<div class="input-block">
+						<p>Depth of cut</p>
+						<input class="input" formControlName="ap" type="number" [value]="calculationForm.value.ap">
+						<div class="parametr-block">
+							<p>ap | mm</p>
+							<p></p>
+						</div>
+					</div>
+					<div class="input-block">
+						<p>Width of cut</p>
+						<input class="input" formControlName="ae" type="number" [value]="calculationForm.value.ae">
+						<div class="parametr-block">
+							<p>ae | mm</p>
+							<p></p>
+						</div>
+					</div>
+					<div class="input-block">
+						<p>Entry angle</p>
+						<input class="input" formControlName="entryAngle" type="number" [value]="calculationForm.value.entryAngle">
+						<div class="parametr-block">
+							<p>k | °</p>
+							<p></p>
+						</div>
+					</div>
+					<div class="input-block">
+						<p>Feed per tooth</p>
+						<input class="input" formControlName="fz" type="number" [value]="calculationForm.value.fz">
+						<div class="parametr-block">
+							<p>fz | mm</p>
+							<p></p>
+						</div>
+					</div>
+					<div class="input-block">
+						<p>Feed per revolution</p>
+						<input class="input" formControlName="fn" type="number" [value]="calculationForm.value.fn">
+						<div class="parametr-block">
+							<p>fn | mm/rev</p>
+							<p></p>
+						</div>
+					</div>
+					<div class="input-block">
+						<p>Linear feed</p>
+						<input class="input" formControlName="vf" type="number" [value]="calculationForm.value.vf">
+						<div class="parametr-block">
+							<p>vf | mm/min</p>
+							<p></p>
+						</div>
+					</div>
+					<div class="input-block">
+						<p>Length of cut</p>
+						<input class="input" formControlName="cutLength" type="number" [value]="calculationForm.value.cutLength">
+						<div class="parametr-block">
+							<p>lm | mm</p>
+							<p></p>
+						</div>
+					</div>
+					<div class="input-block">
+						<p>Overhang</p>
+						<input class="input" formControlName="overhang" type="number" [value]="calculationForm.value.overhang">
+						<div class="parametr-block">
+							<p>U | mm</p>
+							<p></p>
+						</div>
+					</div>
+					<div class="input-block">
+						<p>U | mm</p>
+						<input class="input" formControlName="rakeAngle" type="number" [value]="calculationForm.value.rakeAngle">
+						<div class="parametr-block">
+							<p>γ | °</p>
+							<p></p>
+						</div>
+					</div>
+					<div class="input-block">
+						<p>Efficiency</p>
+						<input class="input" formControlName="efficiency" type="number" [value]="calculationForm.value.efficiency">
+						<div class="parametr-block">
+							<p>η | %</p>
+							<p></p>
+						</div>
+					</div>
+					<div class="input-block">
+						<p>Wear factor</p>
+						<input class="input" formControlName="wearFactor" type="number" [value]="calculationForm.value.wearFactor">
+						<div class="parametr-block">
+							<p>%</p>
+							<p></p>
+						</div>
+					</div>
+					<div class="input-block">
+						<p>Calculation formula</p>
+						<div class="formula-block">
+							<button class="formula-button" [routerLink]="['formula']">FX</button>
+						</div>
+						<div class="parametr-block">
+							<p></p>
+							<p></p>
+						</div>
+					</div>
+					<div class="total-block">
+						<div class="total-title-block">
+							<p>Mean chip thickness</p>
+							<p>Metal removal rate</p>
+							<p>Cut time</p>
+							<p>Torque</p>
+							<p>Power</p>
+
+						</div>
+						<div>
+							<p>0.00hm | mm</p>
+							<p>5.90cm³/min</p>
+							<p>10.24 Seconds</p>
+							<p>15.46Mc | Nm</p>
+							<p>0.54Pmot | KW</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		<!-- </app-background> -->
+	</div>
+</div>

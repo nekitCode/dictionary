@@ -1,9 +1,9 @@
 import { Routes } from '@angular/router';
 import { MillingComponent } from './modules/Milling/components/milling.component';
 import { MainComponent } from './core/layout/main/main.component';
-import {FaceMillingComponent} from "./modules/Milling/components/FaceMilling/faceMilling.component";
-import {ShoulderMillingComponent} from "./modules/Milling/components/ShoulderMilling/ShoulderMilling.component";
-import {SideFaceMillingComponent} from "./modules/Milling/components/SideFaceMilling/sideFaceMilling.component";
+import { FaceMillingComponent } from './modules/Milling/components/FaceMilling/faceMilling.component';
+import { ShoulderMillingComponent } from './modules/Milling/components/ShoulderMilling/ShoulderMilling.component';
+import { SideFaceMillingComponent } from './modules/Milling/components/SideFaceMilling/sideFaceMilling.component';
 
 export const routes: Routes = [
   {
@@ -16,14 +16,18 @@ export const routes: Routes = [
   },
   {
     path: 'milling/face-milling',
-    component: FaceMillingComponent
+    component: FaceMillingComponent,
   },
   {
     path: 'milling/shoulder-milling',
-    component: ShoulderMillingComponent
+    component: ShoulderMillingComponent,
   },
   {
     path: 'milling/side-face-milling',
-    component: SideFaceMillingComponent
+    component: SideFaceMillingComponent,
+  },
+  {
+    path: 'milling/face-milling/formula',
+    component: SideFaceMillingComponent,
   },
 ];

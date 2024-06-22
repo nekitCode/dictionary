@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-go-back',
@@ -8,6 +8,8 @@ import { Component } from '@angular/core';
   imports: [],
 })
 export class GoBackLinkComponent {
+  @Input() title: string = '';
+
   goBack(): void {
     window.history.back();
   }

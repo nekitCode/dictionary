@@ -1,5 +1,19 @@
 .wraapper-header {
 	width: 100%;
-	height: 60px;
-	background-color: bisque;
+}
+
+.home-link {
+	display: flex;
+    align-items: center;
+    height: 50px;
+    padding: 10px 20px;
+	background: #ffffff;
+	cursor: pointer;
+}
+
+.wrapper-go-back-link {
+	display: flex;
+	width: 100%;
+    padding: 10px 20px;
+	background-color: rgb(179, 221, 207);
 }
