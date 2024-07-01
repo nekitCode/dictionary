@@ -1,1 +1,7 @@
-<div>ShoulderMillingComponent</div>
+<div>
+	ShoulderMillingComponent
+
+		<input type="text" [value]="formGroup.value.name" [(ngModel)]="formGroup.value.name" (ngModelChange)="onChange(formGroup.value.name)">
+		<input type="text" [value]="formGroup.value.age" [(ngModel)]="formGroup.value.age" (ngModelChange)="onChange(formGroup.value.age)">
+
+</div>

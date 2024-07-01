@@ -1,0 +1,24 @@
+<div id="myModal" class="modal">
+	<div class="modal-content">
+		<div class="close">&times;</div>
+		<div class="image-wrapper" >
+			<img class="image" *ngFor="let img of modalDetils.srcImagesList" [src]="img" [alt]="'img'"/>
+		</div>
+		<div class="input-wrapper">
+			<p class="range-value">{{ modalDetils.value }}</p>
+			<input 
+				class="range" 
+				type="range" 
+				name="range" 
+				[min]="modalDetils.min"
+				[max]="modalDetils.max"
+				[value]="modalDetils.value"
+				[step]="modalDetils.step"
+				[(ngModel)]="modalDetils.value"
+				(ngModelChange)="handlerRage(modalDetils.value)" 
+			/>
+		</div>
+		<p class="description">{{ modalDetils.description }}</p>
+		<button class="button">OK</button>
+  </div>
+</div>

@@ -3,13 +3,14 @@ import { RouterLink } from '@angular/router';
 import { DetailsType } from '../../../models/details';
 import { DetailsComponent } from '../details/details.component';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-main',
   standalone: true,
   templateUrl: './main.component.html',
   styleUrl: './main.component.scss',
-  imports: [RouterLink, DetailsComponent, CommonModule],
+  imports: [RouterLink, DetailsComponent, CommonModule, FormsModule],
 })
 export class MainComponent {
   public details: DetailsType[] = [

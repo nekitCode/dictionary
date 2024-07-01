@@ -6,6 +6,4 @@ import { Component } from '@angular/core';
   templateUrl: './sideFaceMilling.component.html',
   styleUrl: './sideFaceMilling.component.scss',
 })
-export class SideFaceMillingComponent {
-
-}
+export class SideFaceMillingComponent {}
