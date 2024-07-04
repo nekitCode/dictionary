@@ -24,17 +24,18 @@ export class FaceMillingComponent {
   isOpenRakeAngleModal: boolean = false;
 
   modalDetils: ModalDetails = {
-		srcImagesList: [
-			'/assets/rakePic1.png',
-			'/assets/rakePic2.png',
-			'/assets/rakePic3.png',
-		],
-		description: 'Rake angle affects the ability of the tool to shear the work material and form the chip. Depending on the Tool Material and Workpc. material, It can be positive or negative. Positive rake angles reduce the cutting forces and negative angle increases the cutting forces. It is important to note that the rake angle mentioned here is the net effect of the rake angle in the insert and the inclination in the tool holder.Users are advised to check the configuration of the tool.In the event of uncertainity, it is recomended to use a default approximated value from above selection.',
-		min: -15,
-		max: 30,
-		value: 6,
-		step: 1
-	};
+    srcImagesList: [
+      '/assets/rakePic1.png',
+      '/assets/rakePic2.png',
+      '/assets/rakePic3.png',
+    ],
+    description:
+      'Rake angle affects the ability of the tool to shear the work material and form the chip. Depending on the Tool Material and Workpc. material, It can be positive or negative. Positive rake angles reduce the cutting forces and negative angle increases the cutting forces. It is important to note that the rake angle mentioned here is the net effect of the rake angle in the insert and the inclination in the tool holder.Users are advised to check the configuration of the tool.In the event of uncertainity, it is recomended to use a default approximated value from above selection.',
+    min: -15,
+    max: 30,
+    value: 6,
+    step: 1,
+  };
 
   constructor() {
     this.calculationForm = new FormGroup({
@@ -110,6 +111,11 @@ export class FaceMillingComponent {
 
   handlerRakeAngel(rakeAngle: number) {
     console.log(rakeAngle);
+  }
+
+  handlerDataRakeAngle(rakeAngle: number) {
+    this.isOpenRakeAngleModal = !this.isOpenRakeAngleModal;
+    this.calculationForm.value.rakeAngle = rakeAngle;
   }
 
   handlerEfficiency(efficiency: number) {

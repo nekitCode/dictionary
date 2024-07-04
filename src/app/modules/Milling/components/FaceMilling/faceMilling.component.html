@@ -259,7 +259,7 @@
 					</div>
 				</div>
 				<ng-container *ngIf="isOpenRakeAngleModal">
-					<app-modal-window [modalDetils]="modalDetils"></app-modal-window>
+					<app-modal-window [modalDetils]="modalDetils" (childEvent)="handlerDataRakeAngle($event)"></app-modal-window>
 				</ng-container>
     </div>
   </div>

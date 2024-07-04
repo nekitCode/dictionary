@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ModalDetails } from '../../models/modal';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -11,13 +11,14 @@ import { FormsModule } from '@angular/forms';
   imports: [CommonModule, FormsModule],
 })
 export class ModalWindowComponent {
-  @Input() modalDetils: ModalDetails;
-
-  constructor() {
-    this.modalDetils = {} as ModalDetails;
-  }
+  @Input() modalDetils = {} as ModalDetails;
+  @Output() childEvent = new EventEmitter<number>();
 
   handlerRage(range: number) {
     this.modalDetils.value = range;
+  }
+
+  hundlerConfirm() {
+    this.childEvent.emit(this.modalDetils.value);
   }
 }
