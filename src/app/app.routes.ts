@@ -6,6 +6,7 @@ import { FaceMillingComponent } from './modules/Milling/components/FaceMilling/f
 import { ShoulderMillingComponent } from './modules/Milling/components/ShoulderMilling/ShoulderMilling.component';
 import { SideFaceMillingComponent } from './modules/Milling/components/SideFaceMilling/sideFaceMilling.component';
 import { FaceMillingFormulaComponent } from './modules/Milling/components/formules/faceMillingFormula.component';
+import { MaterialComponent } from './shared/material/material.component';
 
 export const routes: Routes = [
   {
@@ -31,5 +32,9 @@ export const routes: Routes = [
   {
     path: 'milling/face-milling/formula',
     component: FaceMillingFormulaComponent,
+  },
+  {
+    path: 'milling/face-milling/material',
+    component: MaterialComponent,
   },
 ];

@@ -1,7 +1,9 @@
 <div class="face-milling-wrapper">
   <div class="face-milling-block">
     <div class="">
-      <div class="material-block">Material</div>
+      <div class="material-block" [routerLink]="['/milling/face-milling/material']">
+		<div class="material-info">Material</div>
+	  </div>
 				<div class="calculator-wrapper">
 					<div class="input-block">
 						<p>Diameter</p>
@@ -192,7 +194,7 @@
 							[value]="calculationForm.value.rakeAngle" 
 							[(ngModel)]="calculationForm.value.rakeAngle"
 							(ngModelChange)="handlerRakeAngel(calculationForm.value.rakeAngle)"
-							(click)="handlerIsOpenModal()"
+							(click)="handlerIsOpenRakeAngelModal()"
 						/>
 						<div class="parametr-block">
 							<p>γ | °</p>
@@ -208,6 +210,7 @@
 							[value]="calculationForm.value.efficiency" 
 							[(ngModel)]="calculationForm.value.efficiency"
 							(ngModelChange)="handlerEfficiency(calculationForm.value.efficiency)"
+							(click)="handlerIsOpenEfficiencyModal()"
 						/>
 						<div class="parametr-block">
 							<p>η | %</p>
@@ -223,6 +226,7 @@
 							[value]="calculationForm.value.wearFactor" 
 							[(ngModel)]="calculationForm.value.wearFactor"
 							(ngModelChange)="handlerWearFactor(calculationForm.value.wearFactor)"
+							(click)="handlerIsOpenWearFactorModal()"
 						/>
 						<div class="parametr-block">
 							<p>%</p>
@@ -258,9 +262,15 @@
 						</div>
 					</div>
 				</div>
-				<ng-container *ngIf="isOpenRakeAngleModal">
-					<app-modal-window [modalDetils]="modalDetils" (childEvent)="handlerDataRakeAngle($event)"></app-modal-window>
-				</ng-container>
+				@if (isOpenRakeAngleModal) {
+					<app-modal-window [modalDetils]="rakeAngelDetils" (childEvent)="handlerDataRakeAngle($event)"></app-modal-window>
+				}
+				@if (isEfficiencyModal) {
+					<app-modal-window [modalDetils]="efficiencyDetils" (childEvent)="handlerDataEfficiency($event)"></app-modal-window>
+				}
+				@if(isWearFactorModal){
+					<app-modal-window [modalDetils]="wearFactorDetils" (childEvent)="handlerDataWearFactor($event)"></app-modal-window>
+				}
     </div>
   </div>
 </div>
