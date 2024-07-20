@@ -1,17 +1,21 @@
 <div id="myModal" class="modal">
 	<div class="modal-content">
 		<div class="image-wrapper">
-			<img class="image" *ngFor="let img of modalDetils.srcImagesList" [src]="img" [alt]="'img'"/>
+			<img
+				class="image"
+				*ngFor="let img of modalDetils.srcImagesList"
+				[src]="img"
+				[alt]="'img'" />
 		</div>
 		<div class="input-wrapper">
-			<p class="range-value"> 
+			<p class="range-value">
 				@if (modalDetils.measure === 'percent') {
 					{{ modalDetils.value }}%
-				}@else {
+				} @else {
 					{{ modalDetils.value }}°
 				}
 			</p>
-			<input 
+			<input
 				class="range"
 				type="range"
 				name="range"
@@ -20,10 +24,9 @@
 				[value]="modalDetils.value"
 				[step]="modalDetils.step"
 				[(ngModel)]="modalDetils.value"
-				(ngModelChange)="handlerRage(modalDetils.value)" 
-			/>
+				(ngModelChange)="handlerRage(modalDetils.value)" />
 		</div>
 		<p class="description">{{ modalDetils.description }}</p>
 		<button class="button" (click)="hundlerConfirm()">OK</button>
-  </div>
+	</div>
 </div>

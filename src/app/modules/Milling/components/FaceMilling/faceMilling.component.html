@@ -1,276 +1,291 @@
 <div class="face-milling-wrapper">
-  <div class="face-milling-block">
-    <div class="">
-      <div class="material-block" [routerLink]="['/milling/face-milling/material']">
-		<div class="material-info">Material</div>
-	  </div>
-				<div class="calculator-wrapper">
-					<div class="input-block">
-						<p>Diameter</p>
-						<input
-							min="0"
-							class="input"
-							type="number"
-							[value]="calculationForm.value.dc"
-							[(ngModel)]="calculationForm.value.dc"
-							(ngModelChange)="handlerDiameter(calculationForm.value.dc)"
-						/>
-						<div class="parametr-block">
-							<p>Dc | mm</p>
-							<p *ngIf="calculationForm.value.dc">ICON</p>
-						</div>
-					</div>
-					<div class="input-block">
-						<p>Cutting speed</p>
-						<input
-							class="input"
-							min="0"
-							type="number"
-							[value]="calculationForm.value.vc" 
-							[(ngModel)]="calculationForm.value.vc"
-							(ngModelChange)="handlerCuttingSpeed(calculationForm.value.vc)"
-						/>
-						<div class="parametr-block">
-							<p>vc | m/min</p>
-							<p *ngIf="calculationForm.value.vc">ICON</p>
-						</div>
-					</div>
-					<div class="input-block">
-						<p>Revolutions per minute, RPM</p>
-						<input
-							class="input"
-							min="0"
-							type="number"
-							[value]="calculationForm.value.n" 
-							[(ngModel)]="calculationForm.value.n"
-							(ngModelChange)="handlerPerMinute(calculationForm.value.n)"
-						/>
-						<div class="parametr-block">
-							<p>n | RPM</p>
-							<p></p>
-						</div>
-					</div>
-					<div class="input-block">
-						<p>No. of teeth</p>
-						<input
-							class="input"
-							min="0"
-							type="number"
-							[value]="calculationForm.value.z" 
-							[(ngModel)]="calculationForm.value.z"
-							(ngModelChange)="handlerNumberOfTeeth(calculationForm.value.z)"
-						/>
-						<div class="parametr-block">
-							<p>Z</p>
-							<p></p>
-						</div>
-					</div>
-					<div class="input-block">
-						<p>Depth of cut</p>
-						<input
-							class="input"
-							min="0"
-							type="number"
-							[value]="calculationForm.value.ap" 
-							[(ngModel)]="calculationForm.value.ap"
-							(ngModelChange)="handlerDepthOfCut(calculationForm.value.ap)"
-						/>
-						<div class="parametr-block">
-							<p>ap | mm</p>
-							<p></p>
-						</div>
-					</div>
-					<div class="input-block">
-						<p>Width of cut</p>
-						<input
-							class="input"
-							min="0"
-							type="number"
-							[value]="calculationForm.value.ae" 
-							[(ngModel)]="calculationForm.value.ae"
-							(ngModelChange)="handlerWithOfCut(calculationForm.value.ae)"
-						/>
-						<div class="parametr-block">
-							<p>ae | mm</p>
-							<p></p>
-						</div>
-					</div>
-					<div class="input-block">
-						<p>Entry angle</p>
-						<input
-							class="input"
-							min="0"
-							type="number"
-							[value]="calculationForm.value.entryAngle" 
-							[(ngModel)]="calculationForm.value.entryAngle"
-							(ngModelChange)="handlerEnterAngle(calculationForm.value.entryAngle)"
-						/>
-						<div class="parametr-block">
-							<p>k | °</p>
-							<p></p>
-						</div>
-					</div>
-					<div class="input-block">
-						<p>Feed per tooth</p>
-						<input
-							class="input"
-							min="0"
-							type="number"
-							[value]="calculationForm.value.fz" 
-							[(ngModel)]="calculationForm.value.fz"
-							(ngModelChange)="handlerFeedPerTooth(calculationForm.value.fz)"
-						/>
-						<div class="parametr-block">
-							<p>fz | mm</p>
-							<p></p>
-						</div>
-					</div>
-					<div class="input-block">
-						<p>Feed per revolution</p>
-						<input
-							class="input"
-							min="0"
-							type="number"
-							[value]="calculationForm.value.fn" 
-							[(ngModel)]="calculationForm.value.fn"	
-							(ngModelChange)="handlerFeedPerRevolution(calculationForm.value.fn)"
-						/>
-						<div class="parametr-block">
-							<p>fn | mm/rev</p>
-							<p></p>
-						</div>
-					</div>
-					<div class="input-block">
-						<p>Linear feed</p>
-						<input
-							class="input"
-							min="0"
-							type="number"
-							[value]="calculationForm.value.vf" 
-							[(ngModel)]="calculationForm.value.vf"
-							(ngModelChange)="handlerLinearFeed(calculationForm.value.vf)"
-						/>
-						<div class="parametr-block">
-							<p>vf | mm/min</p>
-							<p></p>
-						</div>
-					</div>
-					<div class="input-block">
-						<p>Length of cut</p>
-						<input
-							class="input"
-							min="0"
-							type="number"
-							[value]="calculationForm.value.cutLength" 
-							[(ngModel)]="calculationForm.value.cutLength"
-							(ngModelChange)="handlerLengthOfCut(calculationForm.value.cutLength)"
-						/>
-						<div class="parametr-block">
-							<p>lm | mm</p>
-							<p></p>
-						</div>
-					</div>
-					<div class="input-block">
-						<p>Overhang</p>
-						<input
-							class="input"
-							min="0"
-							type="number"
-							[value]="calculationForm.value.overhang" 
-							[(ngModel)]="calculationForm.value.overhang"
-							(ngModelChange)="handlerOverhang(calculationForm.value.overhang)"
-						/>
-						<div class="parametr-block">
-							<p>U | mm</p>
-							<p></p>
-						</div>
-					</div>
-					<div class="input-block">
-						<p>Rake angle</p>
-						<input
-							class="input"
-							min="0"
-							type="number"
-							[value]="calculationForm.value.rakeAngle" 
-							[(ngModel)]="calculationForm.value.rakeAngle"
-							(ngModelChange)="handlerRakeAngel(calculationForm.value.rakeAngle)"
-							(click)="handlerIsOpenRakeAngelModal()"
-						/>
-						<div class="parametr-block">
-							<p>γ | °</p>
-							<p></p>
-						</div>
-					</div>
-					<div class="input-block">
-						<p>Efficiency</p>
-						<input
-							class="input"
-							min="0"
-							type="number"
-							[value]="calculationForm.value.efficiency" 
-							[(ngModel)]="calculationForm.value.efficiency"
-							(ngModelChange)="handlerEfficiency(calculationForm.value.efficiency)"
-							(click)="handlerIsOpenEfficiencyModal()"
-						/>
-						<div class="parametr-block">
-							<p>η | %</p>
-							<p></p>
-						</div>
-					</div>
-					<div class="input-block">
-						<p>Wear factor</p>
-						<input
-							class="input"
-							min="0"
-							type="number"
-							[value]="calculationForm.value.wearFactor" 
-							[(ngModel)]="calculationForm.value.wearFactor"
-							(ngModelChange)="handlerWearFactor(calculationForm.value.wearFactor)"
-							(click)="handlerIsOpenWearFactorModal()"
-						/>
-						<div class="parametr-block">
-							<p>%</p>
-							<p></p>
-						</div>
-					</div>
-					<div class="input-block">
-						<p>Calculation formula</p>
-						<div class="formula-block">
-							<button class="formula-button" [routerLink]="['formula']">
-								FX
-							</button>
-						</div>
-						<div class="parametr-block">
-							<p></p>
-							<p></p>
-						</div>
-					</div>
-					<div class="total-block">
-						<div class="total-title-block">
-							<p>Mean chip thickness</p>
-							<p>Metal removal rate</p>
-							<p>Cut time</p>
-							<p>Torque</p>
-							<p>Power</p>
-						</div>
-						<div>
-							<p>0.00hm | mm</p>
-							<p>5.90cm³/min</p>
-							<p>10.24 Seconds</p>
-							<p>15.46Mc | Nm</p>
-							<p>0.54Pmot | KW</p>
-						</div>
+	<div class="face-milling-block">
+		<div class="">
+			<div
+				class="material-block"
+				[routerLink]="['/milling/face-milling/material']">
+				<div class="material-info" [ngClass]="materialData.materialGroup">
+					<div class="material-group">{{ materialData.materialGroup }}</div>
+					<div>
+						<p>{{ materialData.displayText }}</p>
+						<p>{{ materialData.detailText }}</p>
+						<p>
+							({{ materialData.hardnessUnit }} {{ materialData.hardnessValue }},
+							{{ materialData.tensileStrengthPrefix }}
+							{{ materialData.tensileStrengthValue }}
+							{{ materialData.tensileStrengthUnit }})
+						</p>
 					</div>
 				</div>
-				@if (isOpenRakeAngleModal) {
-					<app-modal-window [modalDetils]="rakeAngelDetils" (childEvent)="handlerDataRakeAngle($event)"></app-modal-window>
-				}
-				@if (isEfficiencyModal) {
-					<app-modal-window [modalDetils]="efficiencyDetils" (childEvent)="handlerDataEfficiency($event)"></app-modal-window>
-				}
-				@if(isWearFactorModal){
-					<app-modal-window [modalDetils]="wearFactorDetils" (childEvent)="handlerDataWearFactor($event)"></app-modal-window>
-				}
-    </div>
-  </div>
+			</div>
+			<div class="calculator-wrapper">
+				<div class="input-block">
+					<p>Diameter</p>
+					<input
+						min="0"
+						class="input"
+						type="number"
+						[value]="calculationForm.value.dc"
+						[(ngModel)]="calculationForm.value.dc"
+						(ngModelChange)="handlerDiameter(calculationForm.value.dc)" />
+					<div class="parametr-block">
+						<p>Dc | mm</p>
+						<p *ngIf="calculationForm.value.dc">ICON</p>
+					</div>
+				</div>
+				<div class="input-block">
+					<p>Cutting speed</p>
+					<input
+						class="input"
+						min="0"
+						type="number"
+						[value]="calculationForm.value.vc"
+						[(ngModel)]="calculationForm.value.vc"
+						(ngModelChange)="handlerCuttingSpeed(calculationForm.value.vc)" />
+					<div class="parametr-block">
+						<p>vc | m/min</p>
+						<p *ngIf="calculationForm.value.vc">ICON</p>
+					</div>
+				</div>
+				<div class="input-block">
+					<p>Revolutions per minute, RPM</p>
+					<input
+						class="input"
+						min="0"
+						type="number"
+						[value]="calculationForm.value.n"
+						[(ngModel)]="calculationForm.value.n"
+						(ngModelChange)="handlerPerMinute(calculationForm.value.n)" />
+					<div class="parametr-block">
+						<p>n | RPM</p>
+						<p></p>
+					</div>
+				</div>
+				<div class="input-block">
+					<p>No. of teeth</p>
+					<input
+						class="input"
+						min="0"
+						type="number"
+						[value]="calculationForm.value.z"
+						[(ngModel)]="calculationForm.value.z"
+						(ngModelChange)="handlerNumberOfTeeth(calculationForm.value.z)" />
+					<div class="parametr-block">
+						<p>Z</p>
+						<p></p>
+					</div>
+				</div>
+				<div class="input-block">
+					<p>Depth of cut</p>
+					<input
+						class="input"
+						min="0"
+						type="number"
+						[value]="calculationForm.value.ap"
+						[(ngModel)]="calculationForm.value.ap"
+						(ngModelChange)="handlerDepthOfCut(calculationForm.value.ap)" />
+					<div class="parametr-block">
+						<p>ap | mm</p>
+						<p></p>
+					</div>
+				</div>
+				<div class="input-block">
+					<p>Width of cut</p>
+					<input
+						class="input"
+						min="0"
+						type="number"
+						[value]="calculationForm.value.ae"
+						[(ngModel)]="calculationForm.value.ae"
+						(ngModelChange)="handlerWithOfCut(calculationForm.value.ae)" />
+					<div class="parametr-block">
+						<p>ae | mm</p>
+						<p></p>
+					</div>
+				</div>
+				<div class="input-block">
+					<p>Entry angle</p>
+					<input
+						class="input"
+						min="0"
+						type="number"
+						[value]="calculationForm.value.entryAngle"
+						[(ngModel)]="calculationForm.value.entryAngle"
+						(ngModelChange)="
+							handlerEnterAngle(calculationForm.value.entryAngle)
+						" />
+					<div class="parametr-block">
+						<p>k | °</p>
+						<p></p>
+					</div>
+				</div>
+				<div class="input-block">
+					<p>Feed per tooth</p>
+					<input
+						class="input"
+						min="0"
+						type="number"
+						[value]="calculationForm.value.fz"
+						[(ngModel)]="calculationForm.value.fz"
+						(ngModelChange)="handlerFeedPerTooth(calculationForm.value.fz)" />
+					<div class="parametr-block">
+						<p>fz | mm</p>
+						<p></p>
+					</div>
+				</div>
+				<div class="input-block">
+					<p>Feed per revolution</p>
+					<input
+						class="input"
+						min="0"
+						type="number"
+						[value]="calculationForm.value.fn"
+						[(ngModel)]="calculationForm.value.fn"
+						(ngModelChange)="
+							handlerFeedPerRevolution(calculationForm.value.fn)
+						" />
+					<div class="parametr-block">
+						<p>fn | mm/rev</p>
+						<p></p>
+					</div>
+				</div>
+				<div class="input-block">
+					<p>Linear feed</p>
+					<input
+						class="input"
+						min="0"
+						type="number"
+						[value]="calculationForm.value.vf"
+						[(ngModel)]="calculationForm.value.vf"
+						(ngModelChange)="handlerLinearFeed(calculationForm.value.vf)" />
+					<div class="parametr-block">
+						<p>vf | mm/min</p>
+						<p></p>
+					</div>
+				</div>
+				<div class="input-block">
+					<p>Length of cut</p>
+					<input
+						class="input"
+						min="0"
+						type="number"
+						[value]="calculationForm.value.cutLength"
+						[(ngModel)]="calculationForm.value.cutLength"
+						(ngModelChange)="
+							handlerLengthOfCut(calculationForm.value.cutLength)
+						" />
+					<div class="parametr-block">
+						<p>lm | mm</p>
+						<p></p>
+					</div>
+				</div>
+				<div class="input-block">
+					<p>Overhang</p>
+					<input
+						class="input"
+						min="0"
+						type="number"
+						[value]="calculationForm.value.overhang"
+						[(ngModel)]="calculationForm.value.overhang"
+						(ngModelChange)="handlerOverhang(calculationForm.value.overhang)" />
+					<div class="parametr-block">
+						<p>U | mm</p>
+						<p></p>
+					</div>
+				</div>
+				<div class="input-block">
+					<p>Rake angle</p>
+					<input
+						class="input"
+						min="0"
+						type="number"
+						[value]="calculationForm.value.rakeAngle"
+						[(ngModel)]="calculationForm.value.rakeAngle"
+						(ngModelChange)="handlerRakeAngel(calculationForm.value.rakeAngle)"
+						(click)="handlerIsOpenRakeAngelModal()" />
+					<div class="parametr-block">
+						<p>γ | °</p>
+						<p></p>
+					</div>
+				</div>
+				<div class="input-block">
+					<p>Efficiency</p>
+					<input
+						class="input"
+						min="0"
+						type="number"
+						[value]="calculationForm.value.efficiency"
+						[(ngModel)]="calculationForm.value.efficiency"
+						(ngModelChange)="
+							handlerEfficiency(calculationForm.value.efficiency)
+						"
+						(click)="handlerIsOpenEfficiencyModal()" />
+					<div class="parametr-block">
+						<p>η | %</p>
+						<p></p>
+					</div>
+				</div>
+				<div class="input-block">
+					<p>Wear factor</p>
+					<input
+						class="input"
+						min="0"
+						type="number"
+						[value]="calculationForm.value.wearFactor"
+						[(ngModel)]="calculationForm.value.wearFactor"
+						(ngModelChange)="
+							handlerWearFactor(calculationForm.value.wearFactor)
+						"
+						(click)="handlerIsOpenWearFactorModal()" />
+					<div class="parametr-block">
+						<p>%</p>
+						<p></p>
+					</div>
+				</div>
+				<div class="input-block">
+					<p>Calculation formula</p>
+					<div class="formula-block">
+						<button class="formula-button" [routerLink]="['formula']">
+							FX
+						</button>
+					</div>
+					<div class="parametr-block">
+						<p></p>
+						<p></p>
+					</div>
+				</div>
+				<div class="total-block">
+					<div class="total-title-block">
+						<p>Mean chip thickness</p>
+						<p>Metal removal rate</p>
+						<p>Cut time</p>
+						<p>Torque</p>
+						<p>Power</p>
+					</div>
+					<div>
+						<p>0.00hm | mm</p>
+						<p>5.90cm³/min</p>
+						<p>10.24 Seconds</p>
+						<p>15.46Mc | Nm</p>
+						<p>0.54Pmot | KW</p>
+					</div>
+				</div>
+			</div>
+			@if (isOpenRakeAngleModal) {
+				<app-modal-window
+					[modalDetils]="rakeAngelDetils"
+					(childEvent)="handlerDataRakeAngle($event)"></app-modal-window>
+			}
+			@if (isEfficiencyModal) {
+				<app-modal-window
+					[modalDetils]="efficiencyDetils"
+					(childEvent)="handlerDataEfficiency($event)"></app-modal-window>
+			}
+			@if (isWearFactorModal) {
+				<app-modal-window
+					[modalDetils]="wearFactorDetils"
+					(childEvent)="handlerDataWearFactor($event)"></app-modal-window>
+			}
+		</div>
+	</div>
 </div>

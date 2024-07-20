@@ -1,29 +1,33 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { BackgroundComponent } from '../../../../features/background/background.component';
 import { CommonModule } from '@angular/common';
 import { FormControl, FormGroup, FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { ModalWindowComponent } from '../../../../shared/modalWindow/modalWindow.component';
 import { ModalDetails } from '../../../../models/modal';
+import { MaterialDetails } from '../../models/material';
+import { FaceMillingMaterialService } from '../../services/faceMIllingMaterial.service';
+import { MaterialService } from '../../../../shared/services/material.service';
 
 @Component({
   selector: 'app-face-milling',
   standalone: true,
   imports: [
-    BackgroundComponent,
-    CommonModule,
     RouterLink,
     FormsModule,
+    CommonModule,
+    BackgroundComponent,
     ModalWindowComponent,
   ],
   templateUrl: './faceMilling.component.html',
   styleUrl: './faceMilling.component.scss',
 })
-export class FaceMillingComponent {
+export class FaceMillingComponent implements OnInit {
   calculationForm: FormGroup;
   isOpenRakeAngleModal: boolean = false;
   isEfficiencyModal: boolean = false;
   isWearFactorModal: boolean = false;
+  materialData = {} as MaterialDetails;
 
   rakeAngelDetils: ModalDetails = {
     srcImagesList: [
@@ -68,7 +72,10 @@ export class FaceMillingComponent {
     step: 1,
   };
 
-  constructor() {
+  constructor(
+    private faceMillingDataService: FaceMillingMaterialService,
+    private materialService: MaterialService
+  ) {
     this.calculationForm = new FormGroup({
       dc: new FormControl(0),
       vc: new FormControl(0),
@@ -86,6 +93,20 @@ export class FaceMillingComponent {
       efficiency: new FormControl(0),
       wearFactor: new FormControl(0),
     });
+  }
+
+  ngOnInit(): void {
+    this.faceMillingDataService
+      .getMaterialData()
+      .subscribe((data: MaterialDetails[]) => {
+        this.materialService.setData(data);
+        if (Object.keys(this.materialService.getCurrentMaterialItem()).length) {
+          this.materialData = this.materialService.getCurrentMaterialItem();
+          return;
+        }
+        this.materialData = this.materialService.getData()[0];
+        this.materialService.setCurrentMaterialItem(this.materialData);
+      });
   }
 
   handlerDiameter(dc: number) {
@@ -173,5 +194,10 @@ export class FaceMillingComponent {
   handlerDataWearFactor(wearFactor: number) {
     this.isWearFactorModal = false;
     this.calculationForm.value.wearFactor = wearFactor;
+  }
+
+  getCurrentMaterialItem(currentMaterial: any) {
+    console.log(currentMaterial, 'CURRENT');
+    console.log(this.materialData);
   }
 }

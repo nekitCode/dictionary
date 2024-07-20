@@ -1,20 +1,31 @@
 <div class="material-wrapper">
 	<div class="material-block">
 		<div class="material-item" *ngFor="let item of materialType">
-			<p [ngClass]="item" (click)="handlerFilterByType(item)">{{item}}</p>
+			<p [ngClass]="item" (click)="handlerFilterByType(item)">{{ item }}</p>
 		</div>
 	</div>
 	<div class="details-block">
-		<div class="detail-item" *ngFor="let detail of materialsDetails">
+		<div
+			class="detail-item"
+			*ngFor="let detail of materialsDetails"
+			(click)="getCurrentItem(detail)">
 			<div class="material-type" [ngClass]="'type' + detail.materialGroup">
-				{{detail.id}}
+				{{ detail.id }}
 			</div>
 			<div class="details-description">
-				<p>{{detail.displayText}}</p>
-				<p>{{detail.detailText}}</p>
-				<p> ({{detail.hardnessUnit}} {{detail.hardnessValue}}, {{detail.tensileStrengthPrefix}} {{detail.tensileStrengthValue}} {{detail.tensileStrengthUnit}})</p>
+				<div>
+					<p>{{ detail.displayText }}</p>
+					<p>{{ detail.detailText }}</p>
+					<p>
+						({{ detail.hardnessUnit }} {{ detail.hardnessValue }},
+						{{ detail.tensileStrengthPrefix }} {{ detail.tensileStrengthValue }}
+						{{ detail.tensileStrengthUnit }})
+					</p>
+				</div>
+				<div class="check-cycl">
+					<div [class]="currentMaterialItem.id === detail.id ? 'check-inner-cycl' : null"></div>
+				</div>
 			</div>
-			<div>check</div>
 		</div>
 	</div>
 </div>

@@ -48,7 +48,7 @@
 .K:hover {
 	background-color: #eccee3;
 }
-.M:hover{
+.M:hover {
 	background-color: #fefcd0;
 }
 .N:hover {
@@ -65,9 +65,9 @@
 }
 
 .details-block {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
 }
 
 .material-type {
@@ -92,8 +92,8 @@
 
 .details-description {
 	display: flex;
-    flex-direction: column;
-    row-gap: 5px;
+    width: 100%;
+    justify-content: space-between;
 }
 
 .typeP {
@@ -102,7 +102,7 @@
 .typeK {
 	background-color: #eccee3;
 }
-.typeM{
+.typeM {
 	background-color: #fefcd0;
 }
 .typeN {
@@ -116,4 +116,21 @@
 }
 .typeO {
 	background-color: #cccccc;
+}
+
+.check-cycl {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 25px;
+	height: 25px;
+	border: 1px solid rgb(184, 184, 184);
+	border-radius: 50%;
+}
+
+.check-inner-cycl {
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+	background-color: #7cc59b;
 }
