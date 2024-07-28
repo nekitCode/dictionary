@@ -8,6 +8,7 @@ import { ModalDetails } from '../../../../models/modal';
 import { MaterialDetails } from '../../models/material';
 import { FaceMillingMaterialService } from '../../services/faceMIllingMaterial.service';
 import { MaterialService } from '../../../../shared/services/material.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-face-milling',
@@ -54,7 +55,7 @@ export class FaceMillingComponent implements OnInit {
     measure: 'percent',
     min: 70,
     max: 98,
-    value: 0,
+    value: 70,
     step: 1,
   };
   wearFactorDetils: ModalDetails = {

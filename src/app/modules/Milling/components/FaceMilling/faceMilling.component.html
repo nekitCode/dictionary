@@ -30,7 +30,9 @@
 						(ngModelChange)="handlerDiameter(calculationForm.value.dc)" />
 					<div class="parametr-block">
 						<p>Dc | mm</p>
-						<p *ngIf="calculationForm.value.dc">ICON</p>
+						@if (calculationForm.value.dc) {
+							<img class="edit-image" src="/assets/edit.svg"/>
+						}
 					</div>
 				</div>
 				<div class="input-block">
@@ -44,7 +46,9 @@
 						(ngModelChange)="handlerCuttingSpeed(calculationForm.value.vc)" />
 					<div class="parametr-block">
 						<p>vc | m/min</p>
-						<p *ngIf="calculationForm.value.vc">ICON</p>
+						@if (calculationForm.value.vc) {
+							<img class="edit-image" src="/assets/edit.svg"/>
+						}
 					</div>
 				</div>
 				<div class="input-block">
@@ -58,7 +62,9 @@
 						(ngModelChange)="handlerPerMinute(calculationForm.value.n)" />
 					<div class="parametr-block">
 						<p>n | RPM</p>
-						<p></p>
+						@if (calculationForm.value.n) {
+							<img class="edit-image" src="/assets/edit.svg"/>
+						}
 					</div>
 				</div>
 				<div class="input-block">
@@ -72,7 +78,9 @@
 						(ngModelChange)="handlerNumberOfTeeth(calculationForm.value.z)" />
 					<div class="parametr-block">
 						<p>Z</p>
-						<p></p>
+						@if (calculationForm.value.z) {
+							<img class="edit-image" src="/assets/edit.svg"/>
+						}
 					</div>
 				</div>
 				<div class="input-block">
@@ -86,7 +94,9 @@
 						(ngModelChange)="handlerDepthOfCut(calculationForm.value.ap)" />
 					<div class="parametr-block">
 						<p>ap | mm</p>
-						<p></p>
+						@if (calculationForm.value.ap) {
+							<img class="edit-image" src="/assets/edit.svg"/>
+						}
 					</div>
 				</div>
 				<div class="input-block">
@@ -100,7 +110,9 @@
 						(ngModelChange)="handlerWithOfCut(calculationForm.value.ae)" />
 					<div class="parametr-block">
 						<p>ae | mm</p>
-						<p></p>
+						@if (calculationForm.value.ae) {
+							<img class="edit-image" src="/assets/edit.svg"/>
+						}
 					</div>
 				</div>
 				<div class="input-block">
@@ -116,7 +128,9 @@
 						" />
 					<div class="parametr-block">
 						<p>k | °</p>
-						<p></p>
+						@if (calculationForm.value.entryAngle) {
+							<img class="edit-image" src="/assets/edit.svg"/>
+						}
 					</div>
 				</div>
 				<div class="input-block">
@@ -130,7 +144,9 @@
 						(ngModelChange)="handlerFeedPerTooth(calculationForm.value.fz)" />
 					<div class="parametr-block">
 						<p>fz | mm</p>
-						<p></p>
+						@if (calculationForm.value.fz) {
+							<img class="edit-image" src="/assets/edit.svg"/>
+						}
 					</div>
 				</div>
 				<div class="input-block">
@@ -146,7 +162,9 @@
 						" />
 					<div class="parametr-block">
 						<p>fn | mm/rev</p>
-						<p></p>
+						@if (calculationForm.value.fn) {
+							<img class="edit-image" src="/assets/edit.svg"/>
+						}
 					</div>
 				</div>
 				<div class="input-block">
@@ -160,7 +178,9 @@
 						(ngModelChange)="handlerLinearFeed(calculationForm.value.vf)" />
 					<div class="parametr-block">
 						<p>vf | mm/min</p>
-						<p></p>
+						@if (calculationForm.value.vf) {
+							<img class="edit-image" src="/assets/edit.svg"/>
+						}
 					</div>
 				</div>
 				<div class="input-block">
@@ -176,7 +196,9 @@
 						" />
 					<div class="parametr-block">
 						<p>lm | mm</p>
-						<p></p>
+						@if (calculationForm.value.cutLength) {
+							<img class="edit-image" src="/assets/edit.svg"/>
+						}
 					</div>
 				</div>
 				<div class="input-block">
@@ -190,7 +212,9 @@
 						(ngModelChange)="handlerOverhang(calculationForm.value.overhang)" />
 					<div class="parametr-block">
 						<p>U | mm</p>
-						<p></p>
+						@if (calculationForm.value.overhang) {
+							<img class="edit-image" src="/assets/edit.svg"/>
+						}
 					</div>
 				</div>
 				<div class="input-block">
@@ -205,7 +229,9 @@
 						(click)="handlerIsOpenRakeAngelModal()" />
 					<div class="parametr-block">
 						<p>γ | °</p>
-						<p></p>
+						@if (calculationForm.value.rakeAngle) {
+							<img class="edit-image" src="/assets/edit.svg"/>
+						}
 					</div>
 				</div>
 				<div class="input-block">
@@ -222,7 +248,9 @@
 						(click)="handlerIsOpenEfficiencyModal()" />
 					<div class="parametr-block">
 						<p>η | %</p>
-						<p></p>
+						@if (calculationForm.value.efficiency) {
+							<img class="edit-image" src="/assets/edit.svg"/>
+						}
 					</div>
 				</div>
 				<div class="input-block">
@@ -239,7 +267,9 @@
 						(click)="handlerIsOpenWearFactorModal()" />
 					<div class="parametr-block">
 						<p>%</p>
-						<p></p>
+						@if (calculationForm.value.wearFactor) {
+							<img class="edit-image" src="/assets/edit.svg"/>
+						}
 					</div>
 				</div>
 				<div class="input-block">
@@ -248,10 +278,6 @@
 						<button class="formula-button" [routerLink]="['formula']">
 							FX
 						</button>
-					</div>
-					<div class="parametr-block">
-						<p></p>
-						<p></p>
 					</div>
 				</div>
 				<div class="total-block">
