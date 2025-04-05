@@ -1,8 +1,10 @@
+import { HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
-import { HeaderComponent } from './core/layout/header/header.component';
+
 import { FooterComponent } from './core/layout/footer/footer.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HeaderComponent } from './core/layout/header/header.component';
+import { UtilitiesModule } from './UtilitiesModule';
 
 @Component({
   selector: 'app-root',
@@ -13,6 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
     HeaderComponent,
     FooterComponent,
     HttpClientModule,
+    UtilitiesModule,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
