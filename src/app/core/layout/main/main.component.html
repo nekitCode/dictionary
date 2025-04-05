@@ -1,3 +1,5 @@
 <section name="" id="" class="main-wrapper">
-  <app-details *ngFor="let detail of details" [detail]="detail"> </app-details>
+  @for (detail of details; track detail.id) {
+  <app-details [detail]="detail"> </app-details>
+  }
 </section>
